@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "descricao":"playstation 5",
+        "serialNo":"2151471",
+        "valor":"5599.99"
+    },
+    {
+        "id": 2,
+        "descricao": "xbox series s",
+        "serialNo": "2151454",
+        "valor": "2599.47"
+      }
+]

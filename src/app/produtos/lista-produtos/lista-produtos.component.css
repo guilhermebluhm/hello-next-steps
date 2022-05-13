@@ -1,0 +1,16 @@
+table, mat-toolbar{
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+mat-toolbar{
+    margin-bottom: -2%;
+}
+
+.loading-style{
+    padding: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
