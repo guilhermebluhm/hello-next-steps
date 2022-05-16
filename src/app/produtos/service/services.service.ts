@@ -12,7 +12,7 @@ export class ServicesService {
 
   listarTodos() {
     return this.httpClient.get<produtoModel[]>(this.API)
-    .pipe(take(1), delay(3000));
+    .pipe();
     
     //operador take(1) do rxjs usado apenas para casos de chamadas
     //http que nao contenham fluxo de dados fazer uma unica chamada

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ErrComponent } from '../err/err.component';
@@ -13,11 +14,12 @@ import { ServicesService } from '../service/services.service';
 })
 export class ListaProdutosComponent {
 
-  displayedColumns = ["id","descricao","serialNo","valor"]
+  displayedColumns = ["id","descricao","serialNo","valor","acoes"]
 
   listaTableProdutos : Observable<produtoModel[]>;
 
-  constructor(private service : ServicesService, public dialog: MatDialog) { 
+  constructor(private service : ServicesService, public dialog: MatDialog,
+    private roteamento: Router, private rotaAtual : ActivatedRoute) { 
 
     // se possivel sempre evitar o subscribe e lidar com dataSource
     // angular faz o cast dinamicamente tanto para array de dados quanto
@@ -25,10 +27,15 @@ export class ListaProdutosComponent {
 
     this.listaTableProdutos = this.service.listarTodos().pipe(
       catchError(x => {
+        console.log(x)
         this.loadOnError("impossivel carregar produtos")
         return of([])
       })
     );
+   }
+
+   criarNovoProduto(){
+     this.roteamento.navigate(['novo-produto'],{relativeTo: this.rotaAtual})
    }
 
    loadOnError(err : string) {

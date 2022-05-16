@@ -12,6 +12,7 @@ import { ErrComponent } from './err/err.component';
 import {MatButtonModule} from '@angular/material/button';
 import { PipePipe } from './pipes/pipe.pipe';
 import { MatIconModule } from '@angular/material/icon';
+import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 
 
 
@@ -20,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     ListaProdutosComponent,
     ErrComponent,
     PipePipe,
+    CadastrarProdutoComponent,
   ],
   imports: [
     CommonModule,
