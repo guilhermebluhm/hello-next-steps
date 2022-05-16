@@ -11,7 +11,7 @@
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
   
-    <!-- Descricao Column -->
+    <!-- Nome Column -->
     <ng-container matColumnDef="descricao">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
       <td mat-cell *matCellDef="let element"> {{element.descricao}} 
@@ -19,17 +19,32 @@
       </td>
     </ng-container>
   
-    <!-- SerialNo Column -->
+    <!-- Descricao Column -->
     <ng-container matColumnDef="serialNo">
       <th mat-header-cell *matHeaderCellDef> Descricao </th>
       <td mat-cell *matCellDef="let element"> {{element.serialNo}} </td>
     </ng-container>
 
-    <!-- SerialNo Column -->
+    <!-- Valor Column -->
     <ng-container matColumnDef="valor">
         <th mat-header-cell *matHeaderCellDef> Valor(R$) </th>
         <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
-      </ng-container>
+    </ng-container>
+
+    <!-- Acoes Column -->
+    <ng-container matColumnDef="acoes">
+      <mat-header-cell *matHeaderCellDef style="padding-top: 3%;">
+        <button mat-flat-button color="warn" (click)="criarNovoProduto">add</button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="warn" aria-label="acao de editar um registro">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="acao de excluir um registro">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
