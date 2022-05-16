@@ -1,1 +1,26 @@
-<p>cadastrar-produto works!</p>
+<mat-card class="example-card">
+    <mat-card-title>Adicionar Novo Produto</mat-card-title>
+    <mat-card-content>
+        <form class="form-group" [formGroup]="formulario">
+            <br>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nome do Produto</mat-label>
+              <input matInput placeholder="Ex. Nintendo Switch OLED" formControlName="descricao">
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>SerialNo.</mat-label>
+                <input matInput placeholder="Ex. numeric field" formControlName="serialNo">
+            </mat-form-field><br>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Ex. R$ 4.999.59" formControlName="valor">
+            </mat-form-field><br>
+
+            <button mat-button (click)="acaoSalvar()">Salvar</button>
+            <button mat-button (click)="retornarRaiz()">Cancelar</button>
+
+          </form>
+    </mat-card-content>
+  </mat-card>

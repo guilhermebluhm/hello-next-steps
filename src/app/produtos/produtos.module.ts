@@ -13,8 +13,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { PipePipe } from './pipes/pipe.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
-
-
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
     MatProgressSpinnerModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ]
 })
 export class ProdutosModule { }
